@@ -1,0 +1,85 @@
+body {
+    background-image: url(images/pastel-de-nata.png);
+    background-size: 28%;
+    background-repeat: no-repeat;
+    background-position: center right 20%;
+    margin-left: 150px; 
+    font-family: 'Roboto', sans-serif;
+    color: black; 
+}
+
+h1 {
+    font-size: 80px;
+    padding-top: 230px;
+    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+p {
+    font-size: 30px;
+    font-weight: 100;
+    margin: 0;
+    opacity: 0.75;
+}
+
+span {
+    color: rgb(233 151 16);
+}
+
+.second-paragraph{
+    margin-bottom: 50px;
+}
+
+.button {
+    text-decoration: none;
+    background-color: rgba(233, 151, 16, 0.80);
+    padding: 10px 15px;
+    color: black;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.button:hover {
+    background-color: rgba(233, 151, 16);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-top: 30px;
+}
+
+ul li a {
+    /* color: rgba(233, 151, 16, 0.60); */
+    color: rgba(0, 0,0, 0.60);
+}
+
+ul li a:hover {
+    color: rgba(0, 0,0, 0.80);
+
+}
+
+
+
+@media (max-width: 640px) {
+    body {
+        text-align: center;
+        margin-left: 0px; 
+        background-size: 42%;
+        background-position: center top 55%;
+    }
+
+    h1 {
+        font-size: 65px;
+        padding-top: 120px;
+    }
+
+    .second-paragraph{
+        margin-bottom: 220px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+  }
