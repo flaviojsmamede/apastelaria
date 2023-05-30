@@ -1,27 +1,228 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-            <title>Pastel de Nata</title>
+            <title>aPastelaria</title>
             <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" href="favicon.ico">
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
             <script src="https://kit.fontawesome.com/f8743ef329.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-            <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="animate__animated animate__fadeInLeft">
-            <h1>Pastel de Nata</h1>
-            <p>The <span>eighth wonder</span> of the world <br> is this <span>portuguese</span> custard tart.</p>
-            <p class="second-paragraph">Now you can order it at anytime!</p>
-            <p><a href="mailto: flaviojsmamede@gmail.com" target="_blank" class="button">Order now</a></p>
-            <ul>
-                <li>
-                    <a href="https://pasteisdebelem.pt/" target="_blank"><i class="fa-solid fa-house"></i></a>    
-                </li>
-            </ul> 
-        </div>
+        <section class="light-mode animate__animated animate__fadeIn" id="mainPage">
+            <header class="header animate__animated animate__fadeIn animate__delay-1ms">
+                <a href="https://flaviojsmamede.github.io/lewagon-landingpage/"><div class="logo"></div></a>
+                <button id="cartButton" class="secondary-button">Cart (<span id="itemsNumberOnCartButton">0</span>)</button>
+            </header>
+            <div class="slider-wrapper">
+                <div class="slides-container" id="slides-container">
+                    <div id="slide1" class="slide animate__animated animate__fadeInRight animate__delay-1ms">
+                        <h1>Pastel de Nata</h1>
+                        <p class="thin-paragraph">The <span class="orange-text">eighth wonder</span> of the world <br> is this <span class="orange-text">Portuguese</span> custard tart.</p>
+                        <p class="second-paragraph thin-paragraph">Now you can order it at any time!</p>
+                        <p class="thin-paragraph"><a class="primary-button animate__animated orderNowBtn">Order now</a></p>
+                    </div>
+                    <div id="slide2" class="slide animate__animated">
+                        <h1>Bolo de Arroz</h1>
+                        <p class="thin-paragraph">The <span class="orange-text">"rice cake"</span> is not only<br> at the <span class="orange-text">coffee shops</span>.</p>
+                        <p class="second-paragraph thin-paragraph">Now you can have it at your place!</p>
+                        <p class="thin-paragraph"><a class="primary-button animate__animated orderNowBtn">Order now</a></p>
+                    </div>
+                    <div id="slide3" class="slide animate__animated">
+                        <h1>Bola de Berlim</h1>
+                        <p class="thin-paragraph">Wandering on every <span class="orange-text">Portuguese <br>beach</span>, this one will <span class="orange-text">amaze</span> you.</p>
+                        <p class="second-paragraph thin-paragraph">Now you can order it at any time!</p>
+                        <p class="thin-paragraph"><a class="primary-button animate__animated orderNowBtn">Order now</a></p>
+                    </div>
+                </div>
+                <footer class="animate__animated animate__fadeIn animate__delay-1ms">
+                    <ul class="icons-footer">
+                        <li class="slide-arrow" id="slide-arrow-prev">
+                            <i class="fa-solid fa-chevron-left"></i> 
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-moon" id="toggleModeIcon"></i>
+                        </li>
+                        <li class="slide-arrow" id="slide-arrow-next">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </section>
+
+        <!-- ------------------ MODALS ------------------ -->
+
+        <section id="mainModal" class="modal animate__animated animate__fast" style="display: none">
+
+            <!-- ------------------ MODAL HEADER ------------------ -->
+
+            <header id="modalHeader" class="modal-header-light animate__animated animate__faster">
+                <i class="fa-solid fa-arrow-left header-icon" id="backButton"></i>
+                <i class="fa-solid fa-xmark header-icon" id="closeButton"></i>
+            </header>
+
+            <!-- ------------------ CART MODAL ------------------ -->
+
+            <article id="cartModal" class="light-modal animate__animated animate__faster ">
+                <h2 class="card-title">My cart</h2>
+                <hr>
+                <div class="flex-items-and-buttons">
+                    <div class="item-card">
+                        <img src="images/pastel_nata.png" alt="image of a pastel de nata" class="item-image">
+                        <div class="item-and-counter">
+                             <p class="item-name">Pastel de Nata</p>
+                            <ul>
+                                <li>
+                                    <button class="secondary-button counter minusButton" id="minusButton">-</button>
+                                </li>
+                                <li>
+                                    <input type="number" value="0" id="pasteisNumber" class="itemNumberOnCounter" min="0" step="1" max="999" disabled/>
+                                </li>
+                                <li>
+                                    <button class="secondary-button counter plusButton" id="plusButton">+</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="item-card">
+                        <img src="images/bolo-arroz.png" alt="image of a bolo de arroz" class="bolo-de-arroz">
+                        <div class="item-and-counter">
+                            <p class="item-name">Bolo de Arroz</p>
+                            <ul>
+                                <li>
+                                    <button class="secondary-button counter minusButton" id="minusButton">-</button>
+                                </li>
+                                <li>
+                                    <input type="number" value="0" id="boloArrozNumber" class="itemNumberOnCounter" min="0" step="1" max="999" disabled/>
+                                </li>
+                                <li>
+                                    <button class="secondary-button counter plusButton" id="plusButton">+</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="item-card">
+                        <img src="images/bola-de-berlim.png" alt="image of a bola de berlim" class="item-image">
+                        <div class="item-and-counter">
+                            <p class="item-name">Bola de Berlim</p>
+                            <ul>
+                                <li>
+                                    <button class="secondary-button counter minusButton" id="minusButton">-</button>
+                                </li>
+                                <li>
+                                    <input type="number" value="0" id="bolaBerlimNumber" class="itemNumberOnCounter" min="0" step="1" max="999" disabled/>
+                                </li>
+                                <li>
+                                    <button class="secondary-button counter plusButton" id="plusButton">+</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="align-bottom">
+                            <div class="total-and-price">
+                                <div>
+                                    <p><strong>Total:</strong></p> 
+                                </div>
+                                <div>
+                                    <p><span class="total-price" id="totalPriceOnCart">0</span> €</p>
+                                </div>
+                            </div>
+                                <button class="primary-button" id="paymentButton">Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ------------------ PAYMENT MODAL ------------------ -->
+
+            <article id="paymentModal" class="light-modal animate__animated animate__faster ">
+                <h2 class="card-title">Payment</h2>
+                <div class="items-and-details">
+                    <div class="total-div">
+                        <div class="items-and-price" style="display: none;">
+                            <div>
+                                <p><span class="itemNumberOnPayment">0</span> x Pastel de Nata</p>
+                            </div>
+                            <div>
+                                <p><span class="itemPriceOnPayment">0</span>€</p>
+                            </div> 
+                        </div>
+                        <div class="items-and-price" style="display: none;">
+                            <div>
+                                <p><span class="itemNumberOnPayment">0</span> x Bolo de Arroz</p>
+                            </div>
+                            <div>
+                                <p><span class="itemPriceOnPayment">0</span>€</p>
+                            </div> 
+                        </div>  
+                        <div class="items-and-price" style="display: none;">
+                            <div>
+                                <p><span class="itemNumberOnPayment">0</span> x Bola de Berlim</p>
+                            </div>
+                            <div>
+                                <p><span class="itemPriceOnPayment">0</span>€</p>
+                            </div> 
+                        </div>    
+                        <hr>
+                        <p><strong>Total: </strong><span id="totalPriceOnPayment">0</span> €</p>
+                    </div>
+                    <div class="your-details">
+                        <h3>Your details</h3>
+                        <form action="" id="form" name="form">
+                            <div class="flex-label-and-input">
+                                <label for="fname">First name:</label>
+                                <input type="text" id="fname" name="fname" placeholder="António" required>
+                            </div>
+                            <div class="flex-label-and-input">
+                                <label for="lname">Last name:</label>
+                                <input type="text" id="lname" name="lname" placeholder="Costa" required>
+                            </div>
+                            <div class="flex-label-and-input">
+                                <label for="address">Address:</label>
+                                <input type="text" id="address" name="address" placeholder="Praça da Alegria nº2" autocomplete="on" required>
+                            </div>
+                            <div class="flex-label-and-input">
+                                <p>Discount?</p>
+                                <div class="radio-inputs">
+                                    <div>
+                                        <input type="radio" id="yesDiscount" name="discount" value="" required>
+                                        <label for="yesDiscount" id="yesLabel">Yes</label>
+                                    </div>
+                                    <div class="no-label">
+                                        <input type="radio" id="noDiscount" name="discount" value="">
+                                        <label for="noDiscount" id="noLabel">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-buttons">
+                                <input type="submit" value="Finish" class="primary-button disabled" id="finishButton" disabled>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ------------------ THANK YOU MODAL ------------------ -->
+
+            <article id="thankYouModal" class="light-modal animate__animated animate__faster">
+                <h2 class="card-title">Order complete!</h2>
+                <div class="thankyou-text-and-button">
+                    <div class="thankyou-text thin-paragraph">
+                        <p>Thank you<br><strong><span id="usersName">name</span></strong> for your order. It will arrive at <strong><span id="usersAddress">address</span></strong> in <strong><span id="randomYears">32 years</span></strong>!</p>
+                    </div>
+                    <button class="primary-button" id="closeButton2">Close</button>
+                </div>
+            </article>
+        </section>
+    <script src="index.js"></script>
     </body>
 </html>
