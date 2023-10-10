@@ -14,7 +14,7 @@ h1 {
 
 h2 {
     font-weight: 400;
-    margin-top: 0px; 
+    margin-top: 0px;
 }
 
 h3 {
@@ -68,8 +68,10 @@ h6 {
     color: black;
     border-radius: 5px;
     font-weight: 400;
+    /* position: fixed;
+    bottom: 2%; */
 }
-    
+
 .primary-button:hover {
     background-color: rgba(233, 151, 16);
     cursor: pointer;
@@ -116,7 +118,9 @@ ul li i:hover {
 }
 
 .icons-footer {
-    padding-top: 150px;
+    position: fixed;
+    bottom: 10%;
+    /* padding-top: 150px; */
 }
 
 /* Hiding the arrows on the input number */
@@ -135,8 +139,8 @@ ul li i:hover {
 /* -------------------- dark mode / light mode -------------------- */
 
 .light-mode {
-    color: black; 
-    padding-left: 15%; 
+    color: black;
+    padding-left: 15%;
     padding-right: 20%;
     height: 100vh;
     transition-duration: 1s;
@@ -144,7 +148,7 @@ ul li i:hover {
 
 .dark-mode {
     color: #e6e6e6;
-    padding-left: 15%; 
+    padding-left: 15%;
     padding-right: 20%;
     height: 100vh;
     background-color: #121212;
@@ -164,10 +168,11 @@ ul li i:hover {
 
 .slider-wrapper {
     overflow: hidden;
+    height: 65vh;
 }
 
 .slides-container {
-    height: 65%;
+    height: 65vh;
     width: 100%;
     display: flex;
     scroll-behavior: smooth;
@@ -196,6 +201,7 @@ ul li i:hover {
 
 .slide {
     flex: 1 0 100%;
+    height: 65vh;
 }
 
 .slide:nth-child(1) {
@@ -225,10 +231,10 @@ ul li i:hover {
 
 /* Overlay on the background */
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
-    left: 0; 
+    left: 0;
     top: 0;
     width: 100%;
     height: 100%;
@@ -237,7 +243,7 @@ ul li i:hover {
 .overlay {
     background-color: rgba(0,0,0,0.4);
 }
-  
+
 /* modal */
 .light-modal {
     background-color: #fff;
@@ -257,7 +263,7 @@ ul li i:hover {
     flex-direction: row;
     justify-content: space-between;
 }
-  
+
 .dark-modal {
     background-color: #1e1e1e;
     color: #e6e6e6;
@@ -269,7 +275,7 @@ ul li i:hover {
 }
 
 .dark-modal hr{
-    color: rgba(250, 250, 250, 0.20);  
+    color: rgba(250, 250, 250, 0.20);
     margin: 0px;
     border-width: 1px 0px 0px 0px;
     border-style: solid;
@@ -289,9 +295,9 @@ ul li i:hover {
 
 /* Close and back Buttons */
 .header-icon {
-    color: rgba(0, 0, 0, 0.40);   
+    color: rgba(0, 0, 0, 0.40);
 }
-  
+
 .header-icon:hover {
     color: rgba(0, 0, 0, 0.60);
     text-decoration: none;
@@ -323,7 +329,7 @@ ul li i:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0px 15px 0px; 
+    padding: 15px 0px 15px 0px;
 }
 
 .item-name {
@@ -342,7 +348,7 @@ ul li i:hover {
 }
 
 hr {
-    color: rgba(0, 0, 0, 0.10);  
+    color: rgba(0, 0, 0, 0.10);
     margin: 0px;
     border-width: 1px 0px 0px 0px;
     border-style: solid;
@@ -386,7 +392,7 @@ hr {
 /* class to disable the buttons */
 .disabled {
     background-color: rgba(143, 143, 143, 0.40);
-    border: none; 
+    border: none;
     cursor: default;
     padding: 10px 15px;
     color: rgba(143, 143, 143, 0.80);
@@ -423,7 +429,7 @@ hr {
 /* form */
 input[type="number"] {
     text-align: center;
-    background: none; 
+    background: none;
     font-size: 18px;
     color: rgba(233, 151, 16, 0.80);
     margin: 0px -5px 0px -5px;
@@ -507,7 +513,7 @@ form p{
 
 #usersName, #usersAddress, #randomYears {
     font-weight: 400;
-} 
+}
 
 /* hiding last pass icon from appearing and changing the styles */
 div[data-lastpass-icon-root] {
@@ -524,15 +530,15 @@ div[data-lastpass-icon-root] {
     .light-modal {
         margin-left: 60%;
     }
-    
+
     .modal-header-light {
         margin-left: 60%;
     }
-      
+
     .dark-modal {
         margin-left: 60%;
     }
-    
+
     .modal-header-dark {
         margin-left: 60%;
     }
@@ -550,16 +556,16 @@ div[data-lastpass-icon-root] {
         padding-top: 0px;
         margin-top: 0px;
     }
-    
+
     .dark-mode{
-        padding: 0px; 
+        padding: 0px;
         background-size: 42%;
         background-position: center top 68%;
         height: 100vh;
     }
 
     .light-mode{
-        padding: 0px; 
+        padding: 0px;
         background-size: 42%;
         background-position: center top 68%;
         height: 100vh;
@@ -577,11 +583,21 @@ div[data-lastpass-icon-root] {
     }
 
     .icons-footer{
-        padding-top: 10%;
+        position: fixed;
+        bottom: 10%;
+        left: 45%;
+        /* padding-top: 10%; */
     }
 
     .align-bottom {
         padding-top: 238px;
+    }
+
+    .button-position{
+      position: fixed;
+      bottom: 2%;
+      /* left: 33%; */
+      transform: translate(-50%, -50%);
     }
 
     /* SLIDES */
@@ -589,25 +605,25 @@ div[data-lastpass-icon-root] {
         background-image: url(images/pastel-de-nata.png);
         background-size: 35%;
         background-repeat: no-repeat;
-        background-position: bottom 30% right 50%;
+        background-position: bottom 35% right 50%;
     }
 
     .slide:nth-child(2) {
         background-image: url(images/bolo-arroz.png);
         background-size: 20%;
         background-repeat: no-repeat;
-        background-position: bottom 30% right 50%;
+        background-position: bottom 35% right 50%;
     }
 
     .slide:nth-child(3) {
         background-image: url(images/bola-de-berlim.png);
         background-size: 25%;
         background-repeat: no-repeat;
-        background-position: bottom 30% right 50%;
+        background-position: bottom 35% right 50%;
     }
 
     .slides-container{
-        height: 70%;
+        height: 65vh;
     }
 
     /* MODALS */
@@ -616,17 +632,17 @@ div[data-lastpass-icon-root] {
         margin-left: 15%;
         padding: 0% 5% 5% 5%;
     }
-    
+
     .modal-header-light {
         margin-left: 15%;
         padding: 5%;
     }
-      
+
     .dark-modal {
         margin-left: 15%;
         padding: 0% 5% 5% 5%;
     }
-    
+
     .modal-header-dark {
         margin-left: 15%;
         padding: 5%;
@@ -640,7 +656,7 @@ div[data-lastpass-icon-root] {
     }
 }
 
-@media (max-width: 470px) { 
+@media (max-width: 470px) {
     body {
         overflow: hidden;
     }
